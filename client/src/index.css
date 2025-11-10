@@ -1,0 +1,172 @@
+/* 🌈 Global Theme Variables */
+:root {
+  --bg-color: #0d0d0d;
+  --surface-color: #111;
+  --border-color: #222;
+  --text-color: #ffffff;
+  --text-muted: #bbbbbb;
+  --accent-color: #f97316;
+  --secondary-color: #a855f7;
+  --input-bg: #1a1a1a;
+  --transition-speed: 0.25s;
+  --font-family: "Poppins", sans-serif;
+}
+
+/* 🧱 Base Styles */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* 🔗 Links */
+a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+a:hover {
+  color: var(--accent-color);
+}
+
+/* 🧩 Buttons */
+button {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all var(--transition-speed) ease-in-out;
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* 🌒 Inputs & Selects */
+input,
+select {
+  width: 100%;
+  padding: 10px 12px;
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border var(--transition-speed);
+}
+
+input:focus,
+select:focus {
+  border-color: var(--accent-color);
+}
+
+/* 💬 Placeholder text */
+::placeholder {
+  color: #888;
+}
+
+/* 🧾 Forms */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* 💡 Utility Classes */
+.text-center {
+  text-align: center;
+}
+.text-muted {
+  color: var(--text-muted);
+}
+.mt-1 {
+  margin-top: 8px;
+}
+.mt-2 {
+  margin-top: 16px;
+}
+.mt-3 {
+  margin-top: 24px;
+}
+
+/* 🧊 Card Style */
+.card {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* 🪟 Modal Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 🪟 Modal Wrapper */
+.modal {
+  animation: fadeIn 0.25s ease-in-out;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* 🌑 Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* 📱 Responsive Utilities */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.95rem;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  input,
+  select,
+  button {
+    font-size: 0.85rem;
+  }
+
+  .modal {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
