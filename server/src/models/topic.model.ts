@@ -43,28 +43,3 @@ const TopicSchema = new Schema<TopicDocument>({
 });
 
 export const Topic = mongoose.model<TopicDocument>("Topic", TopicSchema);
-
-
-
-// import mongoose, { Schema, Document, Types } from "mongoose";
-
-// export interface ITopic extends Document {
-//   chapter_id: Types.ObjectId;   // Reference to Chapter
-//   name: string;
-//   description?: string;
-//   order?: number;
-//   createdAt?: Date;
-//   updatedAt?: Date;
-// }
-
-// const topicSchema = new Schema<ITopic>(
-//   {
-//     chapter_id: { type: Schema.Types.ObjectId, ref: "Chapter", required: true },
-//     name: { type: String, required: true },
-//     description: { type: String },
-//     order: { type: Number, default: 0 },
-//   },
-//   { timestamps: true }
-// );
-
-// export const Topic = mongoose.model<ITopic>("Topic", topicSchema);

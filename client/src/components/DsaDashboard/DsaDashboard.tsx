@@ -51,14 +51,13 @@ const DsaDashboard: React.FC = () => {
           title: topic.name,
           lectures: topic.subtopics.map((sub) => ({
             title: sub.name,
-            problems: sub.problems.map((p, index) => ({
-              id: index,
-              title: p.name,
+            problems: sub.problems.map((p) => ({
+              name: p.name,
               leetcodeLink: p.leetcodeLink,
               youtubeLink: p.youtubeLink,
               articleLink: p.articleLink,
-              status: p.status,
-              difficulty: p.level,
+              level: p.level as "Easy" | "Medium" | "Hard",
+              status: p.status as "Unsolved" | "In Progress" | "Solved",
             })),
           })),
         }))}

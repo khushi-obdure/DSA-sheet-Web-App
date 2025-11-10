@@ -3,7 +3,14 @@ import ProblemTable from "./ProblemTable";
 
 interface Lecture {
   title: string;
-  problems: { name: string; difficulty: string }[];
+  problems: {
+    name?: string;
+    leetcodeLink?: string;
+    youtubeLink?: string;
+    articleLink?: string;
+    level: "Easy" | "Medium" | "Hard";
+    status: "Unsolved" | "In Progress" | "Solved";
+  }[];
 }
 
 interface Step {
@@ -52,7 +59,17 @@ const DsaAccordion: React.FC<DsaAccordionProps> = ({ steps }) => {
                   >
                     {lec.title}
                   </div>
-                  <ProblemTable problems={lec.problems} />
+                  <ProblemTable
+                    problems={lec.problems.map((p, idx) => ({
+                      id: idx, // unique id for table
+                      title: p.name || "Untitled Problem",
+                      difficulty: p.level,
+                      status: p.status,
+                      leetcodeLink: p.leetcodeLink,
+                      youtubeLink: p.youtubeLink,
+                      articleLink: p.articleLink,
+                    }))}
+                  />
                 </div>
               ))}
             </div>
