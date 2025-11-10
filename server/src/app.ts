@@ -17,9 +17,9 @@ app.use("/api/auth", authRoutes);
 app.use("/api/topic", topicRoutes)
 app.use("/api/progress", progressRoutes);
 
-const PORT = process.env.PORT || 4000;
+const PORT: number = Number(process.env.PORT) || 4000;
 connectDB();
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
